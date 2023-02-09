@@ -33,12 +33,32 @@
 
         }
 
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgb(244 239 73) !important;
+            /* background-color: red !important; */
+        }
+
+        .form-select:focus {
+            box-shadow: 0 0 0 0.25rem rgb(244 239 73) !important;
+        }
+
         div.dataTables_wrapper div.dataTables_length select {
             width: 50%;
         }
 
         table.dataTable thead>tr>th.sorting:before {
             margin-bottom: 2px;
+        }
+
+        .page-item.active .page-link {
+            background-color: #FFC107;
+            border: #FFC107;
+        }
+
+
+        div.dataTables_wrapper div.dataTables_filter input {
+            border-bottom: 4px solid #FFC107;
+
         }
     </style>
 </head>
