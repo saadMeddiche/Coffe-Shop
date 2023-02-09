@@ -13,12 +13,12 @@
                             Coffee</b></a>
                 </h4>
             </div>
-            <div class="card-body ">
+            <div class="card-body bg-white">
                 @if (session('message'))
                     <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
 
-                <table class="table table-bordered bg-white">
+                <table id="myTable" class="table table-striped bg-white" style="width:100%">
                     <thead class="bg-white">
                         <tr>
                             <th>ID</th>
@@ -37,10 +37,12 @@
                                 <td>
                                     <img src="{{ asset('uploads/coffee/' . $coffee->image) }}" alt="Img" width="50px"
                                         height="50px">
-                                </td> 
+                                </td>
                                 <td>
                                     <a href="{{ url('admin/edit-coffee/' . $coffee->id) }}" class="btn btn-success">Edit</a>
-                                    <a href="{{ url('admin/delete-coffee/' . $coffee->id) }}" class="btn btn-danger delete-button" onclick=" return confirm('Are you sure you want to delete this item?')">Delete</a>
+                                    <a href="{{ url('admin/delete-coffee/' . $coffee->id) }}"
+                                        class="btn btn-danger delete-button"
+                                        onclick=" return confirm('Are you sure you want to delete this item?')">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

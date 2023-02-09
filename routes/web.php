@@ -50,5 +50,13 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
 
     //=========================================End Coffee======================================
 
+    //=========================================User======================================
+    Route::get('/users', [App\Http\Controllers\Admin\UserController::class, 'index']);
+
+    Route::middleware(['NotTrialAdmin'])->get('/user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+
+    Route::middleware(['NotTrialAdmin'])->put('/update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
+    //=======================================End User====================================
+
 
 });

@@ -56,7 +56,7 @@
                                 </li>
                             @endif
                         @else
-                            @if (Auth::user()->role_as == '1')
+                            @if (Auth::user()->role_as != '0')
                                 <a class="nav-link" href="{{ url('/admin/dashboard') }}">
                                     Dashboard
                                 </a>

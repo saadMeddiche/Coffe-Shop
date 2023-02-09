@@ -21,6 +21,26 @@
     {{-- summernote Css links --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
+    {{-- datatable css link --}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
+
+    <style>
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0px !important;
+            margin: 0px !important;
+
+        }
+
+        div.dataTables_wrapper div.dataTables_length select {
+            width: 50%;
+        }
+
+        table.dataTable thead>tr>th.sorting:before {
+            margin-bottom: 2px;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,6 +71,15 @@
         $(document).ready(function() {
             $("#your_summernote").summernote();
             $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
+    {{-- datatable js link --}}
+    <script src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
         });
     </script>
 </body>
