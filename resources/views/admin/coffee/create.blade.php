@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'View Coffies')
+@section('title', 'Add Coffee')
 
 @section('content')
     <div class="container-fluid px-4">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Description</label>
-                        <textarea type="text" name="description" rows="5" class="form-control" style="border-bottom: 4px solid #ffc107"></textarea>
+                        <textarea type="text" name="description" id="your_summernote" rows="5" class="form-control" style="border-bottom: 4px solid #ffc107"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="">Image</label>

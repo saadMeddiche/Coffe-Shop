@@ -7,7 +7,10 @@
 
         <div class="card mt-5">
             <div class="card-header">
-                <h4>Edit Coffee</h4>
+                <h4>Edit Coffee
+                    <a href="{{ url('admin/coffee') }}" class="btn btn-warning text-white float-end"><b>Back</b></a>
+
+                </h4>
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -30,7 +33,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Description</label>
-                        <textarea type="text" name="description" rows="5" class="form-control">{{ $coffee->description }}</textarea>
+                        <textarea type="text" name="description" id="your_summernote" rows="5" class="form-control">{{ $coffee->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="">Image</label>
