@@ -11,45 +11,31 @@
             <div class="alert alert-danger">{{ session('message') }}</div>
         @endif
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
-            <div class="col">
-                <div class="card h-100 shadow-sm"> <img
-                        src="https://www.freepnglogos.com/uploads/coffee-png/coffee-png-transparent-images-png-only-31.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="clearfix mb-3"> <span class="float-start badge rounded-pill"
-                                style="background-color:brown;">Cappuccino</span>
-                            <span class="float-end price-hp">12354.00&euro;</span>
+            @foreach ($coffies as $coffee)
+                <div class="col">
+                    <div class="card h-100 shadow-sm"> <img src="uploads/coffee/{{ $coffee->image }}" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <div class="clearfix mb-3"> <span class="float-start badge rounded-pill"
+                                    style="background-color:brown;"
+                                    id="rfbtgn{{ $coffee->id }}">{{ $coffee->name }}</span>
+                                <span class="float-end price-hp">{{ $coffee->price }}&euro;</span>
+                            </div>
+                            <input type="hidden" value="{{ $coffee->description }}" id="qsdfgh{{ $coffee->id }}">
+                            <div class="text-center my-4"> <a class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
+                                    onclick="document.getElementById('description').innerHTML=document.getElementById('qsdfgh{{ $coffee->id }}').value;document.getElementById('exampleModalLabel').innerHTML=document.getElementById('rfbtgn{{ $coffee->id }}').innerHTML;">
+                                    Check
+                                </a>
+                            </div>
                         </div>
-                        <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Veniam quidem eaque ut eveniet aut quis rerum. Asperiores
-                            accusamus harum ducimus velit odit ut. Saepe, iste optio laudantium sed
-                            aliquam sequi.</h5>
-                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Check
-                                offer</a> </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm"> <img
-                        src="https://www.freepnglogos.com/uploads/coffee-png/coffee-png-transparent-images-png-only-28.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="clearfix mb-3"> <span class="float-start badge rounded-pill"
-                                style="background-color:brown;">Americano</span>
-                            <span class="float-end price-hp">12354.00&euro;</span>
-                        </div>
-                        <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Veniam quidem eaque ut eveniet aut quis rerum. Asperiores
-                            accusamus harum ducimus velit odit ut. Saepe, iste optio laudantium sed
-                            aliquam sequi.</h5>
-                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Check
-                                offer</a> </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-
-
+    {{-- <img src="https://www.freepnglogos.com/uploads/coffee-png/coffee-png-transparent-images-png-only-28.png"
+        class="card-img-top" alt="..."> --}}
+    @include('layouts.inc.model')
 
 @endsection

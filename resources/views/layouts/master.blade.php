@@ -60,6 +60,10 @@
             border-bottom: 4px solid #FFC107;
 
         }
+
+        .note-editor.note-frame .note-statusbar .note-resizebar {
+            background-color: #FFC107;
+        }
     </style>
 </head>
 

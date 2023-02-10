@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Coffee;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,17 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
-    return view('home');
+    $coffies = Coffee::all();
+    return view('home', compact('coffies'));
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
 
@@ -51,12 +49,21 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
     //=========================================End Coffee======================================
 
     //=========================================User======================================
+
+    //==============================Show User==============================
     Route::get('/users', [App\Http\Controllers\Admin\UserController::class, 'index']);
 
+    //==============================Edit User==============================
     Route::middleware(['NotTrialAdmin'])->get('/user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
 
     Route::middleware(['NotTrialAdmin'])->put('/update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
     //=======================================End User====================================
+
+
+    //=========================================Account======================================
+    
+    //=======================================End Account====================================
+
 
 
 });
