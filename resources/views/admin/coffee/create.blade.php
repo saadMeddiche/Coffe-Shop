@@ -5,10 +5,10 @@
 @section('content')
     <div class="container-fluid px-4">
 
-        <div class="card mt-5">
-            <div class="card-header">
-                <h4 style="color:#ffc107;"><b>Add Coffee</b> 
-                    <a href="{{ url('admin/coffee') }}" class="btn btn-warning text-white float-end"><b>Back</b></a>
+        <div class="card mt-5 Big-Card">
+            <div class="card-header Big-Title">
+                <h4 ><b>Add Coffee</b> 
+                    <a href="{{ url('admin/coffee') }}" class="btn btn-light float-end" style="color:#FFC107;"><b>Back</b></a>
                 </h4>
             </div>
             <div class="card-body">

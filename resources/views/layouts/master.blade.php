@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/img/coffee-beans.png')}}">
 
     <title>@yield('title')</title>
 
@@ -30,7 +30,6 @@
         .dataTables_wrapper .dataTables_paginate .paginate_button {
             padding: 0px !important;
             margin: 0px !important;
-
         }
 
         .form-control:focus {
@@ -64,6 +63,42 @@
         .note-editor.note-frame .note-statusbar .note-resizebar {
             background-color: #FFC107;
         }
+
+        table.dataTable thead>tr>th.sorting:before {
+            color: #FFC107;
+        }
+
+        table.dataTable thead>tr>th.sorting:after {
+            color: #FFC107;
+        }
+
+        div.dataTables_wrapper div.dataTables_info {
+            display: none;
+        }
+
+        div.dataTables_wrapper div.dataTables_filter label {
+            color: #FFC107;
+            font-weight: bold;
+        }
+
+        div.dataTables_wrapper div.dataTables_filter input {
+            color: #FFC107;
+            font-weight: bold;
+        }
+
+        table.dataTable.table-striped>tbody>tr.odd>* {
+            color: #FFC107;
+            font-weight: bold;
+            border-bottom: 4px solid #FFC107;
+        }
+
+        .page-item:not(:first-child) .page-link {
+            color: black;
+        }
+
+        .page-item:first-child .page-link {
+            color: #FFC107;
+        }
     </style>
 </head>
 
@@ -80,23 +115,14 @@
         </div>
     </div>
 
+    {{-- Jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     {{-- ===============scripts=============== --}}
     {{-- bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
-
-    {{-- Jquery --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    {{-- Summernote Js link --}}
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#your_summernote").summernote();
-            $('.dropdown-toggle').dropdown();
-        });
-    </script>
 
     {{-- datatable js link --}}
     <script src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>

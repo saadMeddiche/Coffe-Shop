@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title','GiMeCoffee | Login')
+@section('title', 'GiMeCoffee | Login')
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top:200px;">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                <div class="card Big-Card">
+                    <div class="card-header Big-Title text-center fs-2"><b>{{ __('Login') }}</b></div>
 
                     <div class="card-body">
                         @if (session('message'))
@@ -21,7 +21,9 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        value="{{ old('email') }}" required autocomplete="email" style="box-shadow: none;"
+                                        onfocus="this.style.boxShadow='0 0 10px #FFC107'"
+                                        onblur="this.style.boxShadow='none'">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -38,7 +40,9 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="current-password">
+                                        required autocomplete="current-password" style="box-shadow: none;"
+                                        onfocus="this.style.boxShadow='0 0 10px #FFC107'"
+                                        onblur="this.style.boxShadow='none'">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -48,7 +52,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            {{-- <div class="row mb-3">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
@@ -59,16 +63,16 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                <div class="col-md-8 offset-md-4 d-flex flex-wrap text-center">
+                                    <button type="submit" class="btn text-white" style="background-color: #FFC107">
+                                        <b>{{ __('Login') }}</b>
                                     </button>
 
                                     @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        <a class="btn btn-link" href="{{ route('password.request') }}" style="color:brown;">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif

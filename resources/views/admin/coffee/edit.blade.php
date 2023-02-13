@@ -5,10 +5,10 @@
 @section('content')
     <div class="container-fluid px-4">
 
-        <div class="card mt-5">
-            <div class="card-header">
-                <h4>Edit Coffee
-                    <a href="{{ url('admin/coffee') }}" class="btn btn-warning text-white float-end"><b>Back</b></a>
+        <div class="card mt-5 Big-Card">
+            <div class="card-header Big-Title">
+                <h4 class="d-flex flex-wrap justify-content-md-between justify-content-center gap-4 text-center"><b>Edit Coffee</b> 
+                    <a href="{{ url('admin/coffee') }}" class="btn btn-light float-end" style="color:#FFC107;"><b>Back</b></a>
 
                 </h4>
             </div>
@@ -40,7 +40,7 @@
                         <input type="file" name="image" class="form-control">
                     </div>
                     <div>
-                        <button type="submit" name="Update" class="btn btn-primary float-end">Save</button>
+                        <button type="submit" name="Update" class="btn btn-warning text-white float-end"><b>Save</b></button>
                     </div>
                 </form>
             </div>

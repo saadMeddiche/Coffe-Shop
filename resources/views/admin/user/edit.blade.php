@@ -5,10 +5,10 @@
 @section('content')
     <div class="container-fluid px-4">
 
-        <div class="card mt-5">
-            <div class="card-header">
-                <h4>Edit User
-                    <a href="{{ url('admin/users') }}" class="btn btn-warning text-white float-end"><b>Back</b></a>
+        <div class="card mt-5 Big-Card">
+            <div class="card-header Big-Title">
+                <h4 class="m-0">Edit User
+                    <a href="{{ url('admin/users') }}" class="btn btn-light float-end" style="color:#FFC107;"><b>Back</b></a>
                 </h4>
             </div>
             <div class="card-body">
@@ -28,7 +28,7 @@
                 <form action="{{ url('admin/update-user/' . $user->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="">Role</label>
                         <select name="role_as" class="form-control">

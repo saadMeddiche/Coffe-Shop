@@ -61,8 +61,11 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
 
 
     //=========================================Account======================================
+    Route::get('/edit-account', [App\Http\Controllers\Admin\AccountController::class, 'edit']);
     
+    Route::middleware(['EditAccount'])->put('/update-account', [App\Http\Controllers\Admin\AccountController::class, 'update']);
     //=======================================End Account====================================
+    
 
 
 
