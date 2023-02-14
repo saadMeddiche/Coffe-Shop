@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+@section('title','GiMeCoffee | Register')
+
 @section('content')
-    <div class="container" style="margin-top:200px;">
+    <div class="container" style="margin-top:200px; height:70vh;">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card Big-Card">

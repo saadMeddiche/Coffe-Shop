@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="height:fit-content;">
 
 <head>
     <meta charset="utf-8">
@@ -23,14 +23,19 @@
 
 </head>
 
-<body class="h-100">
+<body style="height:fit-content;">
 
-    <div class="HomeBackground h-full" id="app" style="background-image: url({{ asset('assets/img/header-bg.jpg') }}); ">
-        <nav class="Navbar navbar navbar-expand-md navbar-light shadow-sm fixed-top">
+    <div class="HomeBackground " id="app"
+        style="background-image: url({{ asset('assets/img/header-bg.jpg') }}); height:100%; ">
+
+        <nav class="Navbar navbar navbar-expand-md navbar-light shadow-sm fixed-top h-fit">
+
             <div class="container">
+
                 <a class="TitleOfSite navbar-brand" href="{{ url('/') }}">
                     GiMeCoffee
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -88,7 +93,7 @@
             </div>
         </nav>
 
-        <main class="py-4 mt-5" style="height:100%; " >
+        <main class="py-4 mt-5" style="height:fit-content;" >
             @yield('content')
         </main>
     </div>

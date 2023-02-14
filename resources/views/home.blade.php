@@ -5,13 +5,13 @@
 @section('content')
 
 
-    <div class="container-fluid bg-trasparent my-4 p-3 " style="position: relative;">
+    <div class="container-fluid bg-trasparent my-4 p-3" style="height:100%;">
         @if (session('message'))
             <div class="alert alert-danger">{{ session('message') }}</div>
         @endif
-        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" style="height:100%;">
             @foreach ($coffies as $coffee)
-                <div class="col">
+                <div class="col" style="height:fit-content%;">
                     <div class="card h-100 shadow-sm" style="border:4px solid brown;">
                         <img src="uploads/coffee/{{ $coffee->image }}" class="card-img-top" alt="..."
                             style="border-bottom:4px solid brown;">

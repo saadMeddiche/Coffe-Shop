@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('title', 'GiMeCoffee | Login')
 @section('content')
-    <div class="container" style="margin-top:200px;">
+    <div class="container" style="margin-top:200px; height:70vh;">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card Big-Card">
+                <div class="card Big-Card ">
                     <div class="card-header Big-Title text-center fs-2"><b>{{ __('Login') }}</b></div>
 
                     <div class="card-body">
