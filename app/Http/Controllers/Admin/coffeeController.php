@@ -25,21 +25,18 @@ class coffeeController extends Controller
         $data = $request->validated();
 
         //Fetch the selected Coffee
-        $category = new Coffee();
+        $Coffee = new Coffee();
 
-        $category->name = $data['name'];
-        $category->price = $data['price'];
-        $category->description = $data['description'];
+        $Coffee->name = $data['name'];
+        $Coffee->price = $data['price'];
+        $Coffee->description = $data['description'];
 
-        if ($request->hasfile('image')) {
+        $file = $request->file('image');
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $file->move('uploads/coffee/', $filename);
+        $Coffee->image = $filename;
 
-            $file = $request->file('image');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move('uploads/coffee/', $filename);
-            $category->image = $filename;
-        }
-
-        $category->save();
+        $Coffee->save();
 
         return redirect('admin/coffee')->with('message', 'Coffe has been Added');
     }
@@ -85,7 +82,7 @@ class coffeeController extends Controller
     public function destroy($coffee_id)
     {
         $coffee = Coffee::find($coffee_id);
-        
+
         if ($coffee) {
             $coffee->delete();
             return redirect('admin/coffee')->with('message', 'Coffe has been Deleted');

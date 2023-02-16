@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,6 +20,30 @@ class EditAccountMiddleware
 
     public function handle(Request $request, Closure $next)
     {
+
+        //Check if the user has changed his username
+        if ($request['username'] != Auth::user()->username) {
+
+            // Check if the username already exxist
+            $exists = DB::table('users')->where('name', $request['username'])->exists();
+
+            if ($exists) {
+                
+                return redirect('admin/edit-account')->with('message', 'This Username Already exists');
+            }
+        }
+
+        //Check if the user has changed his email
+        if ($request['email'] != Auth::user()->email) {
+
+            // Check if the email already exist
+            $exists = DB::table('users')->where('email', $request['email'])->exists();
+
+            if ($exists) {
+
+                return redirect('admin/edit-account')->with('message', 'This Email Already exists');
+            }
+        }
 
         //Check if there is empty inputs
         if ($this->emptyInputs($request['username'], $request['email'], $request['current-password']) == false)

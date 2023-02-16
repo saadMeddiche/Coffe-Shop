@@ -20,8 +20,6 @@ Route::get('/', function () {
     return view('home', compact('coffies'));
 });
 
-
-
 Auth::routes();
 
 Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
